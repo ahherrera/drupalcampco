@@ -1,0 +1,19 @@
+<?php
+
+function clima_theme($existing, $type, $theme, $path) {
+  return [
+    'clima' => [
+      'variables' => [
+        'plugin_id' => NULL,
+        'unidad_medida_viento' => NULL,
+        'btn_texto' => NULL,
+        'texto_informativo' => NULL,
+        'imagen_humedad' => NULL,
+        'imagen_viento' => NULL,
+        'dias' => NULL,
+        'dia_actual' => NULL,
+      ],
+      'template' => 'clima',
+    ],
+  ];
+  }

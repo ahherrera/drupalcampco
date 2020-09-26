@@ -1,0 +1,10 @@
+clima-recursos:
+  version: 1.x
+  js:
+    js/clima.js: {}
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,8 @@
+services:
+  clima.util:
+    class: Drupal\clima\Services\Util
+    arguments: []
+
+  clima.api:
+    class: Drupal\clima\Services\Api
+    arguments: []

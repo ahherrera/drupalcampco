@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+        <!-- Loading third party fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|"
+            rel="stylesheet"
+            type="text/css">
+
+        <!-- Loading main css file -->
+        <link rel="stylesheet"
+            href="style.css">
+
+    </head>
+
+    <body>
+        <div class="site-content">
+            <div class="hero">
+                <div class="container">
+                    <form action="#"
+                        class="find-location">
+                        <input type="text" id="coordenadas"
+                            placeholder="{{ texto_informativo }}"">
+                        <input type="submit"
+                            value="{{ btn_texto }}" onclick = "buscarDatosCoordenadas()">
+                    </form>
+
+                </div>
+            </div>
+            <div class="forecast-table">
+                <div class="container">
+                    <div class="forecast-container">
+                        <div class="today forecast">
+                            <div class="forecast-header">
+                                <div class="day">{{ dia_actual.nombre }}</div>
+                                <div class="date">{{ dia_actual.fecha }}</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="location"></div>
+                                <div class="degree">
+                                    <div class="num"><span id= "{{ dia_actual.clave }}"></span><sup>o</sup>C</div>
+                                    <div class="forecast-icon">
+                                        <img id="diactualimagen" src=""
+                                            alt=""
+                                            width=90>
+                                    </div>
+                                </div>
+                                <span><img src="{{ imagen_humedad }}"
+                                        alt=""><span id="humedad"></span></span>
+                                <span><img src="{{ imagen_viento }}"
+                                        alt=""><span id="viento"></span><span>{{ unidad_medida_viento }}<span></span>
+                            </div>
+                        </div>
+                        {% for dia in dias %}
+                        <div class="forecast">
+                            <div class="forecast-header">
+                                <div class="day">{{ dia.nombre }}</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="forecast-icon">
+                                    <img id= "{{ dia.clave }}imagen" src=""
+                                        alt=""
+                                        width=48>
+                                </div>
+                                <div class="degree"><span id= "{{ dia.clave }}"></span><sup>o</sup>C</div>
+                                <small><span id= "{{ dia.clave }}min"></span><sup>o</sup></small>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

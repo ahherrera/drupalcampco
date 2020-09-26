@@ -1,0 +1,4 @@
+name: Módulo del clima
+type: module
+description: Parámetros del clima por ciudad
+core_version_requirement: ^8 || ^9
